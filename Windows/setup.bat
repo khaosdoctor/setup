@@ -1,4 +1,4 @@
-title Settin up your computer
+title Setting up your computer
 color 0a
 cls
 @echo off
