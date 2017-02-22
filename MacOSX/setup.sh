@@ -121,5 +121,3 @@ yarn global add $(grep . yarn.ini | xargs)
 
 echo -e "${CYAN}=> Installing composer packages${NC}"
 composer global require "laravel/installer"
-
-
