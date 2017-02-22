@@ -99,6 +99,8 @@ read gitmail
 
 git config —-global user.name "${gituser}"
 git config —-global user.email "${gitmail}"
+git config --global core.autocrlf input
+git config --global rerere.enabled true
 git config --global apply.whitespace nowarn
 git config --global core.excludesfile "~/.gitexcludes"
 
