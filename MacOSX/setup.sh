@@ -80,7 +80,7 @@ echo -n "Enter path to your .pem files (globs permitted): "
 read pemfiles
 
 # Replace the token with the typed text
-sed -i "s/pemfiles/$pemfiles/g" ~/Desktop/dotfiles/MacOSX/.bash_profile
+sed -i -- "s/@pemfiles@/$pemfiles/g" ~/Desktop/dotfiles/MacOSX/.bash_profile
 
 echo -e "${RED}=> Moving .bash_profile${NC}"
 mv ~/Desktop/dotfiles/MacOSX/.bash_profile ~/
