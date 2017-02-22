@@ -71,7 +71,7 @@ mv ~/Desktop/dotfiles/Global/.gitexcludes ~/
 echo -e "${RED}=> Moving vimrc${NC}"
 mv ~/Desktop/dotfiles/Global/.vimrc ~/
 echo -e "${RED}=> Moving update-all${NC}"
-mv ~/Desktop/dotfiles/Global/update-all /usr/local/bin/
+mv ~/Desktop/dotfiles/MacOSX/update-all /usr/local/bin/
 echo -e "${RED}=> Moving services${NC}"
 mv *.workflow ~/Library/Services/
 
