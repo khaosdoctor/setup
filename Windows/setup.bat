@@ -47,7 +47,27 @@ goto check_Permissions
     start "Downloading Dotfile !line!" "%HomeDrive%\ProgramData\chocolatey\bin\wget.exe" -P ./dotfiles !line!
   )
 
+  REM Moving dotfiles to the right place
   move dotfiles\* %UserProfile%
+
+  REM Starting configuration
+  echo I'll ask you some questions now
+  set /p gituser=What is your git username? 
+  set /p gitmail=What is your git email?
+
+  git config --global user.name "%gituser%"
+  git config --global user.email "%gitmail%"
+  git config --global core.autocrlf true
+  git config --global rerere.enabled true
+  git config --global apply.whitespace nowarn
+  git config --global core.excludesfile "%UserProfile%\.gitexcludes"
+
+  REM Downloading packages
+  echo Downloading yarn packages
+  yarn global add ava bower cordova gulp-cli gulp pug-cli ionic less lite-server nyc eslint
+
+  echo Installing gems
+  gem install jekyll sass compass
 
   REM Downloading apps that cannot be installed with choco
   echo Downloading manual apps
@@ -75,11 +95,17 @@ goto check_Permissions
   echo Once all instalations finish, hit any key to delete the files and end
   pause
 
+  echo Installing composer packages
+  composer global require "laravel/installer"
+
   REM Cleanup
   echo Cleaning the house
 
   del /F /Q /s downloads/*
   rmdir downloads
+
+  del /F /Q /s dotfiles/*
+  rmdir dotfiles
 
 
   echo Bye!
