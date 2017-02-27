@@ -55,19 +55,19 @@ goto check_Permissions
   set /p gituser=What is your git username? 
   set /p gitmail=What is your git email?
 
-  git config --global user.name "%gituser%"
-  git config --global user.email "%gitmail%"
-  git config --global core.autocrlf true
-  git config --global rerere.enabled true
-  git config --global apply.whitespace nowarn
-  git config --global core.excludesfile "%UserProfile%\.gitexcludes"
+  start git config --global user.name "%gituser%"
+  start git config --global user.email "%gitmail%"
+  start git config --global core.autocrlf true
+  start git config --global rerere.enabled true
+  start git config --global apply.whitespace nowarn
+  start git config --global core.excludesfile "%UserProfile%\.gitexcludes"
 
   REM Downloading packages
   echo Downloading yarn packages
-  yarn global add ava bower cordova gulp-cli gulp pug-cli ionic less lite-server nyc eslint
+  start yarn global add ava bower cordova gulp-cli gulp pug-cli ionic less lite-server nyc eslint xo
 
   echo Installing gems
-  gem install jekyll sass compass
+  start gem install jekyll sass compass --no-ri --no-doc --source http://rubygems.org
 
   REM Downloading apps that cannot be installed with choco
   echo Downloading manual apps
@@ -96,7 +96,7 @@ goto check_Permissions
   pause
 
   echo Installing composer packages
-  composer global require "laravel/installer"
+  start composer global require "laravel/installer"
 
   REM Cleanup
   echo Cleaning the house
