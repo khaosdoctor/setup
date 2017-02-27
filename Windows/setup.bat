@@ -44,8 +44,10 @@ goto check_Permissions
 
   FOR /F "delims=" %%i in (dotfiles.ini) do (
     set "line=%%i"
-    start "Downloading Dotfile !line!" "C:\ProgramData\chocolatey\bin\wget.exe" -P ./dotfiles !line!
+    start "Downloading Dotfile !line!" "%HomeDrive%\ProgramData\chocolatey\bin\wget.exe" -P ./dotfiles !line!
   )
+
+  move dotfiles\* %UserProfile%
 
   REM Downloading apps that cannot be installed with choco
   echo Downloading manual apps
@@ -54,11 +56,11 @@ goto check_Permissions
 
   FOR /F "delims=" %%i in (apps-manual.ini) do (
     set "line=%%i"
-    start "Downloading !line!" "C:\ProgramData\chocolatey\bin\wget.exe" -P ./downloads !line!
+    start "Downloading !line!" "%HomeDrive%\ProgramData\chocolatey\bin\wget.exe" -P ./downloads !line!
   )
 
   cls
-  echo Once all downloads finish, hit any key to install
+  echo Once all downloads finish, hit any key to install the downloaded apps
   pause
 
   REM Installing the downloaded apps
