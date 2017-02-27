@@ -54,7 +54,7 @@ goto check_Permissions
 
   FOR /F "delims=" %%i in (apps-manual.ini) do (
     set "line=%%i"
-    REM start "Downloading !line!" "C:\ProgramData\chocolatey\bin\wget.exe" -P ./downloads !line!
+    start "Downloading !line!" "C:\ProgramData\chocolatey\bin\wget.exe" -P ./downloads !line!
   )
 
   cls
