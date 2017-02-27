@@ -35,7 +35,7 @@ goto check_Permissions
   echo Installing following apps:
   echo %apps%
 
-  choco install -y %apps%
+  choco install -y --ignore-checksums %apps%
 
   REM Downloading dotfiles
   echo Downloading dotfiles
