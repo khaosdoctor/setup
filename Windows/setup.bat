@@ -101,10 +101,10 @@ goto check_Permissions
   REM Cleanup
   echo Cleaning the house
 
-  del /F /Q /s downloads/*
+  del /F /Q /s downloads\*
   rmdir downloads
 
-  del /F /Q /s dotfiles/*
+  del /F /Q /s dotfiles\*
   rmdir dotfiles
 
 
