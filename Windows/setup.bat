@@ -2,7 +2,8 @@ title Setting up your computer
 color 0a
 cls
 @echo off
-setlocal enableextensions enabledelayedexpansion
+@setlocal enableextensions enabledelayedexpansion
+@cd /d "%~dp0"
 
 goto check_Permissions
 
