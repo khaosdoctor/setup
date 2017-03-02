@@ -63,14 +63,17 @@ goto check_Permissions
   start git config --global apply.whitespace nowarn
   start git config --global core.excludesfile "%UserProfile%\.gitexcludes"
 
-  REM Downloading packages
+  REM Downloading Yarn packages
   echo Downloading yarn packages
   set "yapps="
   for /f "usebackq delims=" %%a in ("../Global/yarn.ini") do set "yapps=!yapps!%%a "
   start yarn global add %yapps%
 
+  REM Downloading gems
   echo Installing gems
-  start gem install jekyll sass compass --no-ri --no-doc --source http://rubygems.org
+  set "gems="
+  for /f "usebackq delims=" %%a in ("../Global/gems.ini") do set "gems=!gems!%%a "
+  start gem install %gems% --no-ri --no-doc --source http://rubygems.org
 
   REM Downloading apps that cannot be installed with choco
   echo Downloading manual apps
@@ -82,8 +85,8 @@ goto check_Permissions
     start "Downloading !line!" "%HomeDrive%\ProgramData\chocolatey\bin\wget.exe" -P ./downloads !line!
   )
 
-  cls
   echo Once all downloads finish, hit any key to install the downloaded apps
+  cls
   pause
 
   REM Installing the downloaded apps
@@ -94,12 +97,11 @@ goto check_Permissions
     start downloads/%%i
   )
 
-  echo Once all instalations finish, hit any key to delete the files
-  pause
-
+  REM Composer
   echo Installing composer packages
   start composer global require "laravel/installer"
 
+  REM Docker Images
   echo Pulling Docker images to mount databases
 
   start docker pull redis
@@ -108,6 +110,8 @@ goto check_Permissions
   start docker pull postgres
 
   REM Cleanup
+  echo Once all instalations finish, hit any key to delete the files
+  pause
   echo Cleaning the house
 
   del /F /Q /s downloads\*
