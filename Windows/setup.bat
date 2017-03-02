@@ -65,7 +65,9 @@ goto check_Permissions
 
   REM Downloading packages
   echo Downloading yarn packages
-  start yarn global add ava bower cordova gulp-cli gulp pug-cli ionic less lite-server nyc eslint xo
+  set "yapps="
+  for /f "usebackq delims=" %%a in ("../Global/yarn.ini") do set "yapps=!yapps!%%a "
+  start yarn global add %yapps%
 
   echo Installing gems
   start gem install jekyll sass compass --no-ri --no-doc --source http://rubygems.org
@@ -92,7 +94,7 @@ goto check_Permissions
     start downloads/%%i
   )
 
-  echo Once all instalations finish, hit any key to delete the files and end
+  echo Once all instalations finish, hit any key to delete the files
   pause
 
   echo Installing composer packages
@@ -114,5 +116,4 @@ goto check_Permissions
   del /F /Q /s dotfiles\*
   rmdir dotfiles
 
-  echo Bye!
-  exit
+  echo Setup completed
