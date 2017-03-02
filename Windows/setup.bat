@@ -92,12 +92,18 @@ goto check_Permissions
     start downloads/%%i
   )
 
-
   echo Once all instalations finish, hit any key to delete the files and end
   pause
 
   echo Installing composer packages
   start composer global require "laravel/installer"
+
+  echo Pulling Docker images to mount databases
+
+  start docker pull redis
+  start docker pull mongo
+  start docker pull mysql
+  start docker pull postgres
 
   REM Cleanup
   echo Cleaning the house
@@ -107,7 +113,6 @@ goto check_Permissions
 
   del /F /Q /s dotfiles\*
   rmdir dotfiles
-
 
   echo Bye!
   exit
