@@ -146,3 +146,9 @@ yarn global add $(grep . yarn.ini | xargs)
 # Composer packages
 echo -e "${CYAN}=> Installing composer packages${NC}"
 composer global require "laravel/installer"
+
+echo -e "${CYAN}=> Pulling docker images for databases${NC}"
+docker pull mongo
+docker pull redis
+docker pull postgresql
+docker pull mysql
