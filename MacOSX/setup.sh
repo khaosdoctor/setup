@@ -88,6 +88,9 @@ mv ~/Desktop/dotfiles/MacOSX/update-all /usr/local/bin/
 echo -e "${RED}=> Moving services${NC}"
 mv *.workflow ~/Library/Services/
 
+echo -e "${RED}=> Downloading z.sh"
+wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/z.sh
+
 # Ask for PEM path
 echo -n "Enter path to your .pem files (globs permitted): "
 read pemfiles
