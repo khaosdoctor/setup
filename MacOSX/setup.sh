@@ -101,6 +101,16 @@ sed -i -- "s/@pemfiles@/$pemfiles/g" ~/Desktop/dotfiles/MacOSX/.bash_profile
 echo -e "${RED}=> Moving .bash_profile${NC}"
 mv ~/Desktop/dotfiles/MacOSX/.bash_profile ~/
 
+echo -e "${RED}=> Downloading Python Virtual Env"
+pip install virtualenv virtualenvwrapper
+echo -e "${CYAN}=> Configuring Python Virtual Env"
+#config virtual Env
+source ~/.bash_profile
+mkdir -p $WORKON_HOME
+mkvirtualenv -p python3 Py3
+# Exit the 'api' virtual environment
+deactivate
+
 echo -e "${RED}=> Moving .gemrc${NC}"
 mv ~/Desktop/dotfiles/MacOSX/.gemrc ~/
 
