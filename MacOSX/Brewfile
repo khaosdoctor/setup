@@ -11,38 +11,20 @@ tap 'homebrew/versions'
 brew 'awscli'
 brew 'bash-completion'
 brew 'bash-git-prompt'
-brew 'boost'
 brew 'curl'
-brew 'libpng'
-brew 'freetype'
-brew 'gmp'
-brew 'isl'
-brew 'mpfr'
-brew 'libmpc'
 brew 'gcc'
-brew 'gdbm'
-brew 'gettext'
 brew 'git'
-brew 'lua'
 brew 'highlight'
-brew 'icu4c'
-brew 'jpeg'
-brew 'openssl'
-brew 'readline'
-brew 'sqlite'
-brew 'python'
-brew 'libxml2'
-brew 'mas'
-brew 'mongodb', restart_service: true
-brew 'mysql', restart_service: true
-brew 'node'
-brew 'xz'
+brew 'htop'
 brew 'python3'
-brew 'postgresql', restart_service: true
-brew 'redis'
-brew 'unixodbc'
+brew 'httpie'
+brew 'python'
+brew 'mas'
+brew 'node'
 brew 'wget'
 brew 'yarn'
+brew 'zsh'
+brew 'zsh-completions'
 brew 'homebrew/php/php71'
 brew 'homebrew/php/composer'
 cask 'abricotine'
@@ -58,14 +40,17 @@ cask 'filezilla'
 cask 'firefox'
 cask 'firefoxdeveloperedition'
 cask 'gitkraken'
+cask 'gitup'
 cask 'google-chrome'
 cask 'google-play-music-desktop-player'
+cask 'imageoptim'
 cask 'iterm2'
 cask 'kitematic'
 cask 'magicprefs'
 cask 'medis'
 cask 'mongotron'
 cask 'mysqlworkbench'
+cask 'netbeans'
 cask 'pgadmin4'
 cask 'qlcolorcode'
 cask 'qlimagesize'
@@ -91,7 +76,6 @@ cask 'wireshark'
 cask 'xmind'
 mas 'Amphetamine', id: 937984704
 mas 'CalendarFree', id: 415181149
-mas 'DeskChat', id: 1078016835
 mas 'DesktopApp for Messenger', id: 1103992594
 mas 'DrCleaner', id: 921458519
 mas 'DrUnarchiver', id: 1127253508
@@ -101,4 +85,5 @@ mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
+mas 'SopoChat for WhatsApp', id: 1078016835
 mas 'Xcode', id: 497799835
