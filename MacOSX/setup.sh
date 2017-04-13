@@ -102,7 +102,7 @@ echo -e "${CYAN}=> Configuring Python Virtual Env"
 source ~/.bash_profile
 mkdir -p $WORKON_HOME
 mkvirtualenv -p python3 Py3
-# Exit the 'api' virtual environment
+# Exit the 'py3' virtual environment
 deactivate
 
 echo -e "${RED}=> Moving .gemrc${NC}"
