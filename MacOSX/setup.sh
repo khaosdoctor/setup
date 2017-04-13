@@ -76,6 +76,16 @@ mv ~/Desktop/dotfiles/Global/.gitexcludes ~/
 echo -e "${RED}=> Moving vimrc${NC}"
 mv ~/Desktop/dotfiles/Global/.vimrc ~/
 
+echo -e "${RED}=> Downloading ZSH Themes${NC}"
+zsh_theme_custom_path = "${ZSH_CUSTOM}/themes/"
+git clone https://github.com/halfo/lambda-mod-zsh-theme.git $zsh_theme_custom_path/lambda
+git clone https://github.com/denysdovhan/spaceship-zsh-theme.git $zsh_theme_custom_path/spaceship
+git clone https://github.com/skylerlee/zeta-zsh-theme.git $zsh_theme_custom_path/zeta
+git clone https://github.com/eendroroy/alien.git $zsh_theme_custom_path/alien
+
+echo -e "${RED}=> Moving ZSHConfig${NC}"
+mv ~/Desktop/dotfiles/Global/.zshrc ~/
+
 echo -e "${RED}=> Moving update-all${NC}"
 mv ~/Desktop/dotfiles/MacOSX/update-all /usr/local/bin/
 
