@@ -34,12 +34,6 @@ brew tap homebrew/bundle
 echo -e "${CYAN}=> Installing brew apps${NC}"
 brew install $(grep . brew.ini | xargs)
 
-# Starting services
-echo -e "${CYAN}=> Running services${NC}"
-brew services start mysql
-brew services start postgres
-brew services start mongodb
-
 # Installing cask apps
 echo -e "${CYAN}=> Installing brew cask apps${NC}"
 brew cask install $(grep . cask.ini | xargs)
