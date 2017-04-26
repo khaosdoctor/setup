@@ -98,13 +98,6 @@ mv *.workflow ~/Library/Services/
 echo -e "${RED}=> Downloading z.sh"
 wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/z.sh
 
-# Ask for PEM path
-echo -n "Enter path to your .pem files (globs permitted): "
-read pemfiles
-
-# Replace the token with the typed text
-sed -i -- "s/@pemfiles@/$pemfiles/g" ~/Desktop/dotfiles/MacOSX/.bash_profile
-
 echo -e "${RED}=> Moving .bash_profile${NC}"
 mv ~/Desktop/dotfiles/MacOSX/.bash_profile ~/
 
