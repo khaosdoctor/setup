@@ -73,6 +73,9 @@ echo -e "${RED}=> Moving files${NC}"
 echo -e "${RED}=> Moving excludes${NC}"
 mv ~/Desktop/dotfiles/Global/.gitexcludes ~/
 
+echo -e "${RED}=> Downloading VimPlug${NC}"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 echo -e "${RED}=> Moving vimrc${NC}"
 mv ~/Desktop/dotfiles/Global/.vimrc ~/
 
