@@ -79,6 +79,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 echo -e "${RED}=> Moving vimrc${NC}"
 mv ~/Desktop/dotfiles/Global/.vimrc ~/
 
+# ZSH
+
 echo -e "${RED}=> Downloading ZSH Themes${NC}"
 zsh_theme_custom_path = "${ZSH_CUSTOM}/themes/"
 git clone https://github.com/halfo/lambda-mod-zsh-theme.git $zsh_theme_custom_path/lambda
