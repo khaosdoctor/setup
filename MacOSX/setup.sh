@@ -141,6 +141,12 @@ open ~/Desktop/dotfiles/MacOSX/Snazzy.terminal
 # Removing dotfiles repository
 rm -rf ~/Desktop/dotfiles
 
+# Installing RVM
+curl -L https://get.rvm.io | bash -s latest master
+source ~/.bash_profile
+rvm install ruby-2.4
+rvm use ruby-2.4
+
 # Ruby update
 echo -e "${CYAN}=> Installing Ruby Gems${NC}"
 gem update
