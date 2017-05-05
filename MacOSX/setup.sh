@@ -162,7 +162,7 @@ echo -e "${CYAN}=> Configuring Yarn${NC}"
 
 # Yarn config
 yarn config set prefix /usr/local
-yarn global add $(grep . ../Global/yarn.ini | xargs)
+npm i -g $(grep . ../Global/yarn.ini | xargs)
 
 # Composer packages
 echo -e "${CYAN}=> Installing composer packages${NC}"
