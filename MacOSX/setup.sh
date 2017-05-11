@@ -41,6 +41,9 @@ brew cask install $(grep . cask.ini | xargs)
 # Upgrades on brew
 brew upgrade
 
+# Generating GPG Keys
+gpg --gen-key
+
 # Installing mac appstore apps
 echo -e "${CYAN}=> Installing AppStore apps${NC}"
 echo -n "Enter your AppleID (0 to skip): "
