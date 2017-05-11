@@ -42,7 +42,23 @@ brew cask install $(grep . cask.ini | xargs)
 brew upgrade
 
 # Generating GPG Keys
+echo -e "${CYAN}=> Installing and generating GPG Keys${NC}"
 gpg --gen-key
+echo -e "${YELLOW}Configuring git to use GPG ${NC}"
+git config --global gpg.program gpg2
+git config --global commit.gpgsign true
+echo -e "${YELLOW}Setting the generated key to the default key on git${NC}"
+gpgkey=$(gpg2 --with-colons --list-keys | grep '^sub:[[:alpha:]]:2048:1:' | cut -d: -f5)
+
+echo -e "${RED}Found Key: ${gpgkey}${NC}"
+git config --global user.signingkey $gpgkey
+
+echo -e "${CYAN}=====> Caveats:${NC}"
+echo -e "${YELLOW}Please read the following articles on installing verified commits:${NC}"
+echo -e "${YELLOW}http://stackoverflow.com/questions/41052538/git-error-gpg-failed-to-sign-data${NC}"
+echo -e "${YELLOW}https://help.github.com/articles/generating-a-new-gpg-key/${NC}"
+echo -e "${YELLOW}https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/${NC}"
+echo -e "${YELLOW}https://help.github.com/articles/signing-commits-using-gpg/${NC}"
 
 # Installing mac appstore apps
 echo -e "${CYAN}=> Installing AppStore apps${NC}"
